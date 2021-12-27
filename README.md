@@ -15,7 +15,7 @@
     <br> 
 </p>
 
-## 📝 Tabla of Contennidos
+## 📝 Tabla of Contenidos
 
 - [About](#about)
 - [Getting Started](#getting_started)
