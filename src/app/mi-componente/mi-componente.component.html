@@ -1,0 +1,37 @@
+<p>Hola {{ nombre | uppercase }}</p>
+
+<img [src]="imageUrl" alt="Moto">
+
+<br>
+
+<input type="text" placeholder="Ingrese su nombre" [(ngModel)]="nombre">
+
+<app-boton
+[label]="label"
+(apretar)="onClick($event)"
+></app-boton>
+
+<app-boton label="Verde" (apretar)="onClick($event)"
+clase="green"
+></app-boton>
+
+<app-boton label="Cancelar" (apretar)="onClick($event)" clase="red"></app-boton>
+
+<moto-card
+marca="Honda"
+modelo="CBR 600"
+[imageUrl]="imageUrl"
+imageAlt="Moto marlboro"
+cilindrada="600cc"
+potencia="95hp"
+peso="165kg"
+></moto-card>
+
+<moto-card marca="Honda" modelo="CBR 600" [imageUrl]="imageUrl" imageAlt="Moto marlboro" cilindrada="600cc"
+  potencia="95hp" peso="165kg"></moto-card>
+
+<moto-card marca="Honda" modelo="CBR 600" [imageUrl]="imageUrl" imageAlt="Moto marlboro" cilindrada="600cc"
+  potencia="95hp" peso="165kg"></moto-card>
+
+<moto-card marca="Honda" modelo="CBR 600" [imageUrl]="imageUrl" imageAlt="Moto marlboro" cilindrada="600cc"
+  potencia="95hp" peso="165kg"></moto-card>

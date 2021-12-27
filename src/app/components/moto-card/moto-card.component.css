@@ -1,0 +1,10 @@
+.container {
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img {
+  height: 200px;
+  width: auto;
+}

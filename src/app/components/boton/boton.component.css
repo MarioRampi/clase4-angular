@@ -1,0 +1,18 @@
+button {
+  height: 35px;
+  width: 100px;
+  border: 1px solid black;
+  margin: 1px 3px;
+}
+
+.aqua {
+  background-color: aqua;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
