@@ -11,11 +11,11 @@
 
 ---
 
-<p align="center"> App angular - Clase 4
+<p align="center"> Clase 4 - App angular
     <br> 
 </p>
 
-## 📝 Table of Contents
+## 📝 Tabla of Contennidos
 
 - [About](#about)
 - [Getting Started](#getting_started)
