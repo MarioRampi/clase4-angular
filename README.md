@@ -19,13 +19,8 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+- [Prerrequisitos](#pre)
+- [Ramas](#ramas)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -52,7 +47,7 @@ Si se clono el repositorio.
 npm install
 ```
 
-### Prerrequisitos
+### Prerrequisitos <a name = "pre"></a>
 
 Instalar node js.
 
@@ -62,8 +57,20 @@ Instalar angular cli:
 npm install -g @angular/cli
 ```
 
-### Ramas
+### Ramas <a name = "ramas"></a>
 
 <ul>
-    <li>Grupo 105:</li>
+    <li>Grupo 105: https://github.com/MarioRampi/clase4-angular/tree/grupo-105</li>
+  <li>Grupo 106: https://github.com/MarioRampi/clase4-angular/tree/grupo-106</li>
+  <li>Grupo 107: https://github.com/MarioRampi/clase4-angular/tree/grupo-107</li>
+  
+  <li>Grupo 108: https://github.com/MarioRampi/clase4-angular/tree/grupo-108</li>
+  
+  <li>Grupo 109: https://github.com/MarioRampi/clase4-angular/tree/grupo-109</li>
+  
+  <li>Grupo 110: https://github.com/MarioRampi/clase4-angular/tree/grupo-110</li>
+  
+  <li>Grupo 111: https://github.com/MarioRampi/clase4-angular/tree/grupo-111</li>
+  
+  <li>Grupo 112: https://github.com/MarioRampi/clase4-angular/tree/grupo-112</li>
 </ul>
