@@ -1,0 +1,13 @@
+button {
+  height: 50px;
+  width: 100px;
+  margin: 3px;
+}
+
+.aqua {
+  background-color: aquamarine;
+}
+
+.red {
+  background-color: red;
+}

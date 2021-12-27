@@ -1,0 +1,18 @@
+<span>{{ title }} app is running! {{ 1 + 1}}</span>
+
+<img [src]="imageUrl" alt="Moto" class="img">
+
+<br>
+<input type="text" placeholder="Ingrese su nombre" [(ngModel)]="nombre">
+<br>
+
+<app-boton (apretar)="onEnviar($event)" [label]="btnLabel">
+</app-boton>
+
+
+<app-boton (apretar)="onEnviar($event)" label="Cancelar" clase="red">
+</app-boton>
+<br>
+
+<h3>{{ nombre }}</h3>
+<mi-componente></mi-componente>
