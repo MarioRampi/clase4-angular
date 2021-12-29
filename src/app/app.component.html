@@ -1,0 +1,42 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- interpolacion {{ }} -->
+<h1>Hola {{ nombre }} </h1>
+
+<!-- Binding de atributos  []-->
+<img [src]="imageUrl" alt="imagen de moto">
+
+<!-- Two way data binding [(ngModel)] -->
+<input type="text" placeholder="Ingrese su nombre" [(ngModel)]="nombre" >
+
+<!-- Binding de eventos -->
+<button
+(click)="onClick($event)"
+>Enviar</button>
+
+<app-buton label="Aceptar" (apretar)="onClick($event)"></app-buton>
+
+<app-buton clase="info"  label="Ver" (apretar)="onClick($event)"></app-buton>
+
+<app-buton clase="danger"  label="Cancelar" (apretar)="onClick($event)"></app-buton>
+
+<app-nuevo></app-nuevo>
+
+
+<div *ngIf="nombre == 'mostrar'">
+  <h1>Condicional</h1>
+</div>
+
+<div *ngFor="let item of list">
+  <!-- <app-buton [clase]="item" [label]="item" (apretar)="onClick($event)"></app-buton> -->
+  <info-moto [moto]="item"></info-moto>
+</div>
+
+
+<!-- <router-outlet></router-outlet> -->
