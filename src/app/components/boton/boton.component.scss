@@ -1,0 +1,19 @@
+button {
+  height: 35px;
+  width: 100px;
+  margin: 2px;
+  border-radius: 8%;
+  border: 1px dotted black;
+}
+
+.success {
+  background-color: aqua;
+}
+
+.info {
+  background-color: yellow;
+}
+
+.danger {
+  background-color: red;
+}

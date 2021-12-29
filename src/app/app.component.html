@@ -1,0 +1,40 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- DATA BINDING -->
+
+<!-- Interpolacion {{ }} -->
+<h1>Hola {{ nombre  }} </h1>
+
+<!-- Binding a atributos [] -->
+<img [src]="imageUrl" alt="Esto es una foto">
+
+<!-- Two way data binding [(ngModel)] -->
+<input type="text" [(ngModel)]="nombre">
+<!-- Binding de eventos -->
+<button
+(click)="handleClick($event)"
+>Enviar</button>
+
+<app-boton
+label="Aceptar"
+(apretar)="handleClick($event)"
+></app-boton>
+
+<app-boton clase="info" label="Modificar" (apretar)="handleClick($event)"></app-boton>
+
+<app-boton clase="danger" label="Cancelar" (apretar)="handleClick($event)"></app-boton>
+<!-- <router-outlet></router-outlet> -->
+
+<div *ngIf="nombre == '1'">
+  <h1>NG IF</h1>
+</div>
+
+<div *ngFor="let item of list">
+  <app-boton [clase]="item" [label]="item" (apretar)="handleClick($event)"></app-boton>
+</div>
