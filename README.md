@@ -66,7 +66,7 @@ npm install -g @angular/cli
   
   <li>Grupo 108: https://github.com/MarioRampi/clase4-angular/tree/grupo-108</li>
   
-  <li>Grupo 109: https://github.com/MarioRampi/clase4-angular/tree/grupo-109</li>
+  <li>Grupo 109: https://github.com/MarioRampi/clase4-angular/tree/grupo109</li>
   
   <li>Grupo 110: https://github.com/MarioRampi/clase4-angular/tree/grupo-110</li>
   
