@@ -1,0 +1,18 @@
+button {
+  height: 35px;
+  width: 100px;
+  border-radius: 7%;
+  margin: 2px;
+}
+
+.success {
+  background-color: rgb(106, 228, 228);
+}
+
+.danger {
+  background-color: rgb(202, 17, 17);
+}
+
+.info {
+  background-color: yellowgreen;
+}
