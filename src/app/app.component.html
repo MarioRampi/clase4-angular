@@ -1,0 +1,49 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- DATA BINDING -->
+
+<!-- Interpolacion {{ }} c -> v -->
+<h1>Hola {{nombre }}</h1>
+
+<!-- Bindeo a atributos [s]  c -> v -->
+<img [src]="imageUrl" alt="Esto es una imagen">
+
+<br>
+
+<!-- Two way data binding c <-> v -->
+<input type="text" [(ngModel)]="nombre" >
+
+<!-- Bindeo de eventos () c <- v -->
+<button
+(click)="onClick($event)"
+>Enviar</button>
+
+<app-boton
+label="Aceptar"
+(apretar)="onClick($event)"
+></app-boton>
+
+<app-boton clase="info" label="Info" (apretar)="onClick($event)"></app-boton>
+
+<app-boton clase="danger" label="Cancelar" (apretar)="onClick($event)"></app-boton>
+
+<br>
+<app-boton clase="danger" label="Mostrar" (apretar)="onMostrar()"></app-boton>
+
+<div *ngIf="mostrar">
+  <h1>DIRECTIVA NG IF</h1>
+</div>
+
+<app-boton *ngFor="let item of list" [clase]="item" [label]="item"></app-boton>
+
+<div *ngFor="let item of list">
+  <app-boton [clase]="item" [label]="item"></app-boton>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
