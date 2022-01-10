@@ -12,9 +12,16 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { DetalleComponent } from './pages/detalle/detalle.component';
 import { MotoCardComponent } from './components/moto-card/moto-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardHeader, MatCardModule } from '@angular/material/card';
+import { ErrorComponent } from './pages/error/error.component';
+import { ListadoComponent } from './pages/listado/listado.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PaisesService } from './services/paises.service';
+import { PaisItemComponent } from './components/pais-item/pais-item.component';
+import { ContinenteComponent } from './components/continente/continente.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,11 @@ import { MatCardHeader, MatCardModule } from '@angular/material/card';
     H1Component,
     InicioComponent,
     DetalleComponent,
-    MotoCardComponent
+    MotoCardComponent,
+    ErrorComponent,
+    ListadoComponent,
+    PaisItemComponent,
+    ContinenteComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +45,14 @@ import { MatCardHeader, MatCardModule } from '@angular/material/card';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
+
+    HttpClientModule,
+
+    MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [
+    PaisesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

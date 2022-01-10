@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class BotonComponent implements OnInit {
   @Input() label = 'Enviar';
-  @Input() clase = 'aqua';
+  @Input() clase = 'primary';
 
   @Output() apretar = new EventEmitter();
 

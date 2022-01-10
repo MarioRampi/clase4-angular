@@ -1,0 +1,12 @@
+<div >
+
+
+  <div class="container" >
+    <h1>Paises</h1>
+    <app-boton label="🍟 " (apretar)="onClick()"></app-boton>
+
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <pais-item *ngFor="let pais of listaPaises" [pais]="pais" (onPais)="onPais($event)" ></pais-item>
+    <!-- {{pais.name.common}} -->
+  </div>
+</div>
