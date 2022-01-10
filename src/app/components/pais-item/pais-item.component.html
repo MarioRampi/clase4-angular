@@ -1,0 +1,24 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-title>{{pais.flag}} - {{pais.name.common}}</mat-card-title>
+    <mat-card-subtitle>{{pais.name.official}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="pais.flags.svg" alt="Photo of a Shiba Inu">
+
+  <mat-card-content>
+    <p>
+      <strong>CIOC:</strong> {{pais.cioc}}
+    </p>
+    <p>
+      <strong>FIFA:</strong> {{pais.fifa}}
+    </p>
+    <div>
+      <p><b>Capital:</b> {{pais.capital}}</p>
+      <p><b>Region:</b> {{pais.region}}</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="click()" >Ver</button>
+  </mat-card-actions>
+</mat-card>

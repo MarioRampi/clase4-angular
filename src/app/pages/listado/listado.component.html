@@ -1,0 +1,16 @@
+<div>
+  <h1>Paises</h1>
+  <app-boton (apretar)="traePaises()" label="Recargar">
+  </app-boton>
+
+  <mat-spinner
+  *ngIf="loading"
+  ></mat-spinner>
+
+  <!-- <div *ngFor="let pais of listadoPaises" >
+    {{pais.name.common}}
+  </div> -->
+  <div class="container">
+    <pais-item class="item" *ngFor="let pais of listadoPaises" [pais]="pais" (onVer)="ir($event)"></pais-item>
+  </div>
+</div>

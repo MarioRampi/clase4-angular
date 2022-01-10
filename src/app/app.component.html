@@ -1,4 +1,4 @@
-<span>{{ title }} app is running! {{ 1 + 1}}</span>
+<!-- <span>{{ title }} app is running! {{ 1 + 1}}</span>
 
 <img [src]="imageUrl" alt="Moto" class="img">
 
@@ -14,5 +14,19 @@
 </app-boton>
 <br>
 
-<h3>{{ nombre }}</h3>
-<mi-componente></mi-componente>
+<h3>{{ nombre }}</h3> -->
+
+<nav>
+  <a mat-button routerLink="">Inicio</a>
+  <a mat-button routerLink="listado">Listado</a>
+  <a mat-button routerLink="detalle">Detalle</a>
+  <a mat-button routerLink="ruta_que_no_exista">Error</a>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer>
+  <h3>Esto es el footer</h3>
+</footer>

@@ -1,0 +1,21 @@
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Pais } from 'src/app/classes/pais';
+
+@Component({
+  selector: 'pais-item',
+  templateUrl: './pais-item.component.html',
+  styleUrls: ['./pais-item.component.scss']
+})
+export class PaisItemComponent implements OnInit {
+  @Input() pais: Pais = new Pais();
+  @Output() onVer = new EventEmitter<Pais>();
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  click() {
+    this.onVer.emit(this.pais);
+  }
+}
