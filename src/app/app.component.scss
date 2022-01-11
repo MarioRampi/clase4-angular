@@ -1,7 +1,10 @@
-img {
-  height: 250px;
-  width: auto;
+.nav {
+  display: flex;
+  justify-content: center;
+}
 
-  display: block;
-  margin: 8px 0px;
+.section {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
 }

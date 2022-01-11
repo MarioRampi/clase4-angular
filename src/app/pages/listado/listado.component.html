@@ -1,0 +1,11 @@
+<div>
+  <h1>Paises del Mundo</h1>
+  <app-boton label="♻ " (apretar)="traePaises()" clase="primary"></app-boton>
+
+  <mat-spinner *ngIf="loading" ></mat-spinner>
+  <p *ngIf="error">Ocurrio un error!</p>
+
+  <div >
+    <pais-item *ngFor="let pais of listaPaises" [pais]="pais" (onPais)="verDetalle($event)" ></pais-item>
+  </div>
+</div>

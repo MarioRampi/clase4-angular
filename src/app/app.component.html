@@ -1,44 +1,17 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<h1>Hola {{ nombre }}</h1>
-
-<img [src]="imageUrl" alt="Imagen de moto">
-
-<input type="text" placeholder="nombre" [(ngModel)]="nombre" >
-
-<button
-  (click)="onClick($event)"
->Enviar</button>
-
-<app-boton
-label="Aceptar"
-(apretar)="onClick($event)"
-></app-boton>
-
-
-<app-boton clase="green" label="Enviar" (apretar)="onClick($event)"></app-boton>
-
-<app-boton clase="red" label="Cancelar" (apretar)="onClick($event)"></app-boton>
-<br>
-<mi-texto></mi-texto>
-
-<p>
-  <ngb-progressbar type="success" [value]="25"></ngb-progressbar>
-</p>
-<div *ngIf="nombre == 'mostrar'">
-  <h3>DIV CONDICIONAL</h3>
-</div>
 <div>
-  <h3>NG FOR</h3>
-  <div *ngFor="let item of list">
-    <!-- {{ item }} -->
-    <app-boton [clase]="item" [label]="item" (apretar)="onClick($event)"></app-boton>
-  </div>
+  <nav class="nav">
+    <a mat-flat-button routerLink="">Inicio</a>
+    <a mat-flat-button routerLink="detalle">Detalle</a>
+    <a mat-flat-button routerLink="detalle/123">Detalle con params</a>
+    <a mat-flat-button routerLink="listado">Listado</a>
+    <a mat-flat-button routerLink="error">Error</a>
+  </nav>
+
+  <section class="section">
+    <router-outlet></router-outlet>
+  </section>
+
+  <footer>
+    <h3>Soy un footer</h3>
+  </footer>
 </div>
-<!-- <router-outlet></router-outlet> -->
