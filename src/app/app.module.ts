@@ -17,6 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { MatButtonModule } from '@angular/material/button';
+import { ErrorComponent } from './pages/error/error.component';
+import { ListadoComponent } from './pages/listado/listado.component';
+import { PaisService } from './service/pais.service';
+
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
+import { PaisItemComponent } from './components/pais-item/pais-item.component';
+import { RegionComponent } from './pages/region/region.component';
+
 
 registerLocaleData(en);
 
@@ -27,7 +37,11 @@ registerLocaleData(en);
     BotonComponent,
     InputComponent,
     InicioComponent,
-    DetalleComponent
+    DetalleComponent,
+    ErrorComponent,
+    ListadoComponent,
+    PaisItemComponent,
+    RegionComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +53,18 @@ registerLocaleData(en);
 
     BrowserAnimationsModule,
 
-    NzButtonModule
+    NzButtonModule,
+
+    MatButtonModule,
+
+    MatProgressSpinnerModule,
+
+    MatCardModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    PaisService,
+    { provide: NZ_I18N, useValue: en_US }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,15 @@
+<div>
+  <h1>Listado de Paises</h1>
+  <div>
+    <button mat-raised-button color="warn" (click)="traerPaises()">♻</button>
+
+    <mat-spinner *ngIf="loading"></mat-spinner>
+
+    <p *ngIf="error"> Ocurrio un error</p>
+  </div>
+
+  <div >
+    <pais-item *ngFor="let pais of paises" [pais]="pais" (onPais)="verDetalle($event)"></pais-item>
+    <!-- {{pais.flag}} {{pais.name.common}} -->
+  </div>
+</div>

@@ -6,35 +6,22 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<div class="imagen">
-  <h1>Hola {{ nombre }}</h1>
 
-  <img [src]="imageUrl" alt="Foto de moto">
+<div>
+  <nav>
+    <a mat-button routerLink="">Inicio</a>
+    <a mat-button routerLink="listado">Listado</a>
+    <a mat-button routerLink="region/europa">Europa</a>
+    <a mat-button routerLink="detalle">Detalle</a>
+    <a mat-button routerLink="detalle/parametro">Detalle con params</a>
+    <a mat-button routerLink="mdmfmklk">Error</a>
+  </nav>
 
-  <input type="text" name="" id="" [(ngModel)]="nombre">
+  <section>
+    <router-outlet></router-outlet>
+  </section>
 
-  <button
-  (click)="onClick($event)"
-  >Enviar</button>
-
-  <app-boton
-  label="Aceptar"
-  (apretar)="onClick($event)"
-  ></app-boton>
-
-    <app-boton clase="blue" label="Modificar" (apretar)="onClick($event)"></app-boton>
-
-    <app-boton clase="red" label="Cancelar" (apretar)="onClick($event)"></app-boton>
+  <footer>
+    <h3>Esto es el footer</h3>
+  </footer>
 </div>
-
-<section>
-  <h1 *ngIf="nombre == '1' ">
-    NG IF {{ nombre }}
-  </h1>
-
-  <div *ngFor="let item of list">
-    <!-- {{ item }} -->
-    <app-boton [clase]="item" [label]="item" (apretar)="onClick($event)"></app-boton>
-  </div>
-</section>
-<!-- <router-outlet></router-outlet> -->

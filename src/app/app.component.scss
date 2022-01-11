@@ -1,17 +1,10 @@
-.imagen {
-  height: 650px;
-  width: auto;
-  border: 1px solid black;
-
-  background-image: url("https://www.mozilla.org/media/img/logos/firefox/logo-quantum.9c5e96634f92.png");
-  background-repeat: round;
-  background-size: cover;
-  margin: 6px;
+nav {
+  display: flex;
+  justify-content: center;
 }
 
-img {
-  height: 400px;
-  width: auto;
-  display: block;
-  margin: 6px;
+section {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
 }
