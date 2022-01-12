@@ -6,4 +6,7 @@ export class Moto {
   potencia?: string;
   peso?: string;
 
+  // constructor(marca: string) {
+  //   this.marca = marca;
+  // }
 }

@@ -1,1 +1,13 @@
-<p>listado works!</p>
+<div>
+  <h1>Paises del Mundo</h1>
+
+  <button mat-raised-button color="primary" (click)="traerPaises()">♻ </button>
+
+  <p *ngIf="error">Ocurrio un error!</p>
+
+  <mat-spinner *ngIf="loading"></mat-spinner>
+
+  <div >
+    <pais-item *ngFor="let pais of paises" [pais]="pais" (onPais)="verDetalle($event)"></pais-item>
+  </div>
+</div>
