@@ -1,6 +1,10 @@
-img {
-  height: 250px;
-  width: auto;
-  display: block;
-  margin-bottom: 5px;
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
 }
