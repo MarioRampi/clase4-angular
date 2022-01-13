@@ -1,9 +1,8 @@
-h1 {
-  color: red;
+.nav {
+  display: flex;
+  justify-content: center;
 }
 
-img {
-  height: 250px;
-  width: auto;
-  display: block;
+.section {
+  margin: 12px;
 }

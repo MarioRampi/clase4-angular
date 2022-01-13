@@ -1,1 +1,33 @@
-<p>inicio works!</p>
+<!-- DATA BINDING -->
+<!-- Interpolacion {{ }} c -> v -->
+<h1>Hola {{ nombre }}</h1>
+
+<!-- Bindeo a atributos [] c -> v -->
+<img [src]="imageUrl" alt="esto es una foto">
+<br>
+<!-- Two way data binding   c <-> v -->
+<input type="text" [(ngModel)]="nombre">
+
+<!-- Bindeo a eventos () c <- v -->
+<button (click)="onClick($event)">Enviar</button>
+
+<app-boton label="Aceptar" (apretar)="onClick($event)"></app-boton>
+
+<app-boton clase="info" label="Ver" (apretar)="onClick($event)"></app-boton>
+
+<app-boton clase="danger" label="Cancelar" (apretar)="onClick($event)"></app-boton>
+
+<app-boton clase="info" label="NG IF" (apretar)="onMostrar()"></app-boton>
+
+<div *ngIf="mostrar">
+  <h1>Directiva Condicional</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita illum, harum modi, incidunt tempore rerum cum
+    molestiae iure mollitia dignissimos voluptatem quos sed perferendis doloribus quod minima tempora atque quasi?</p>
+</div>
+
+<app-boton *ngFor="let item of list" [clase]="item" [label]="item" (apretar)="onMostrar()"></app-boton>
+
+<div *ngFor="let item of list">
+  <!-- {{ item }} -->
+  <app-boton [clase]="item" [label]="item" (apretar)="onMostrar()"></app-boton>
+</div>

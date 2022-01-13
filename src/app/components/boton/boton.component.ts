@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-boton',
   templateUrl: './boton.component.html',
-  styleUrls: ['./boton.component.css']
+  styleUrls: ['./boton.component.scss']
 })
 export class BotonComponent implements OnInit {
   @Input() label = 'Enviar';
