@@ -1,1 +1,13 @@
-<p>listado works!</p>
+<div>
+  <button mat-raised-button color="accent" (click)="traerPaises()" >♻</button>
+
+  <p *ngIf="error">Ocurrio un error"❗ </p>
+
+  <mat-spinner *ngIf="loading"></mat-spinner>
+
+  <div >
+    <pais-item *ngFor="let pais of paises" [pais]="pais" (onPais)="ir($event)"></pais-item>
+    <!-- {{pais.flag}} {{pais.name.common}} -->
+  </div>
+
+</div>

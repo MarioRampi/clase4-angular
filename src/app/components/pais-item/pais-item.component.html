@@ -1,0 +1,30 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-title>{{pais.flag}} {{pais.name.common}}</mat-card-title>
+    <mat-card-subtitle>{{pais.name.official}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="pais.coatOfArms.svg" alt="Photo of a Shiba Inu">
+
+  <mat-card-content>
+    <div>
+      <p><strong>Capital: </strong> <em *ngFor="let item of pais.capital">{{item}}</em></p>
+
+      <p>
+        <b>Region: </b> <em>{{pais.region}}</em>
+      </p>
+      <p>
+        <b>Sub Region: </b> <em>{{pais.subregion}}</em>
+      </p>
+    </div>
+
+    <div>
+      <p><b>FIFA: </b><em>{{pais.fifa}}</em></p>
+      <p><b>CCA2 ISO: </b><em>{{pais.cca2}}</em></p>
+    </div>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="click()">VER DETALLE</button>
+  </mat-card-actions>
+</mat-card>

@@ -6,44 +6,19 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<!-- DATA BINDING -->
+<div>
+  <nav class="nav">
+    <a mat-button routerLink="">Inicio</a>
+    <a mat-button routerLink="listado">Listado</a>
+    <a mat-button routerLink="detalle">Detalle</a>
+    <a mat-button routerLink="path_que_no_existe">Error</a>
+  </nav>
 
-<!-- Interpolacion {{ }} c -> v -->
-<h1>Hola {{nombre }}</h1>
+  <section class="nav section">
+    <router-outlet></router-outlet>
+  </section>
 
-<!-- Bindeo a atributos [s]  c -> v -->
-<img [src]="imageUrl" alt="Esto es una imagen">
-
-<br>
-
-<!-- Two way data binding c <-> v -->
-<input type="text" [(ngModel)]="nombre" >
-
-<!-- Bindeo de eventos () c <- v -->
-<button
-(click)="onClick($event)"
->Enviar</button>
-
-<app-boton
-label="Aceptar"
-(apretar)="onClick($event)"
-></app-boton>
-
-<app-boton clase="info" label="Info" (apretar)="onClick($event)"></app-boton>
-
-<app-boton clase="danger" label="Cancelar" (apretar)="onClick($event)"></app-boton>
-
-<br>
-<app-boton clase="danger" label="Mostrar" (apretar)="onMostrar()"></app-boton>
-
-<div *ngIf="mostrar">
-  <h1>DIRECTIVA NG IF</h1>
+  <footer>
+    <h3>Esto es un footer</h3>
+  </footer>
 </div>
-
-<app-boton *ngFor="let item of list" [clase]="item" [label]="item"></app-boton>
-
-<div *ngFor="let item of list">
-  <app-boton [clase]="item" [label]="item"></app-boton>
-</div>
-
-<!-- <router-outlet></router-outlet> -->
