@@ -1,0 +1,32 @@
+<form #prodForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="staticEmail"
+      [(ngModel)]="user.email" #email="ngModel" name="email"
+      required minlength="3"
+      >
+      <div *ngIf="!email.valid && !email.pristine" class="alert alert-danger" role="alert">
+        Email es requerido
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword"
+      [(ngModel)]="user.password" #password="ngModel" name="password"
+      required minlength="5"
+      >
+    </div>
+
+    <br>
+    <div class="mb-3 row">
+      <button [disabled]="!prodForm.valid" type="submit" class="btn btn-primary">Cargar</button>
+    </div>
+    <div class="mb-3 row">
+      <button type="button" class="btn btn-danger" (click)="prodForm.reset()">Reset</button>
+      <button type="button" class="btn btn-danger" (click)="ver(email)">Reset</button>
+    </div>
+  </div>
+</form>
