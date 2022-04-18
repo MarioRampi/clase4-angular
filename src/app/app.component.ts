@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,17 @@ export class AppComponent {
 
   btnLabel = 'Borrar';
 
+  constructor(private router: Router) {
+
+  }
   onEnviar(event: any) {
     console.log('ON ENVIAR', event);
     console.log('variable title: ', this.title);
+  }
+
+  salir() {
+    localStorage.removeItem('token');
+
+    this.router.navigate(['/login']);
   }
 }

@@ -13,6 +13,7 @@ export class PaisService {
   ) { }
 
   traePaises(): Observable<Pais[]> {
+
     return this.http.get<Pais[]>(this._getUrl('all'));
     // .subscribe(data => {
     //   console.log(data);
@@ -28,4 +29,6 @@ export class PaisService {
   private _getUrl(path: string) {
     return `https://restcountries.com/v3.1/${path}`;
   }
+
+
 }
