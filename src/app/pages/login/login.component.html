@@ -1,0 +1,21 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="submit()" >
+    <div>
+      <label for="email">Email:</label>
+      <br>
+      <input type="email" name="email" formControlName="email">
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <br>
+      <input type="password" name="password" formControlName="password">
+    </div>
+    <hr>
+    <span>STATUS: {{form.status}}</span>
+    <hr>
+    <div>
+      <button [disabled]="!form.valid" >Enviar</button>
+    </div>
+  </form>
+</div>

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +12,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { DetalleComponent } from './pages/detalle/detalle.component';
 import { MotoCardComponent } from './components/moto-card/moto-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardHeader, MatCardModule } from '@angular/material/card';
@@ -22,6 +22,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaisesService } from './services/paises.service';
 import { PaisItemComponent } from './components/pais-item/pais-item.component';
 import { ContinenteComponent } from './components/continente/continente.component';
+import { LoginComponent } from './pages/login/login.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { ContinenteComponent } from './components/continente/continente.componen
     ErrorComponent,
     ListadoComponent,
     PaisItemComponent,
-    ContinenteComponent
+    ContinenteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +52,16 @@ import { ContinenteComponent } from './components/continente/continente.componen
     HttpClientModule,
 
     MatProgressSpinnerModule,
+
+    ReactiveFormsModule,
   ],
   providers: [
-    PaisesService
+    PaisesService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

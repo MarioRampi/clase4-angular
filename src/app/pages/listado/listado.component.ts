@@ -23,6 +23,18 @@ export class ListadoComponent implements OnInit {
     this.traerPaises();
   }
 
+  traerLista() {
+    this.paises.traerLista()
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+        },
+        error: (e) => {
+          console.log(e);
+        }
+      })
+  }
+
   traerPaises() {
     this.listaPaises = [];
     this.loading = true;

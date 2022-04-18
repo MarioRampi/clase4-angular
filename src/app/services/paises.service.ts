@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pais } from '../classes/pais';
 
+const URL_LISTA = 'http://localhost:8080/listar';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +23,9 @@ export class PaisesService {
     return this.http.get<Pais>(this._getUrl(`alpha/${code}`));
   }
 
+  traerLista() {
+    return this.http.get(URL_LISTA);
+  }
   private _getUrl(path: string) {
     return `${this.url}/${path}`;
   }

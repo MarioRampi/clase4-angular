@@ -3,6 +3,7 @@
 
   <div class="container" >
     <h1>Paises</h1>
+    <app-boton label="🍟 " (apretar)="traerLista()"></app-boton>
     <app-boton label="🍟 " (apretar)="onClick()"></app-boton>
 
     <mat-spinner *ngIf="loading"></mat-spinner>
