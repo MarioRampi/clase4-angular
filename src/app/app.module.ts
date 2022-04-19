@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,13 +16,15 @@ import { DetalleComponent } from './pages/detalle/detalle.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { ErrorComponent } from './pages/error/error.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServicesModule } from './services/services.module';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaisItemComponent } from './components/pais-item/pais-item.component';
 
 import { MatCardModule } from '@angular/material/card';
+import { LoginComponent } from './pages/login/login.component';
+import { TokenInterceptor } from './services/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { MatCardModule } from '@angular/material/card';
     DetalleComponent,
     ListadoComponent,
     ErrorComponent,
-    PaisItemComponent
+    PaisItemComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -53,8 +56,16 @@ import { MatCardModule } from '@angular/material/card';
     MatProgressSpinnerModule,
 
     MatCardModule,
+
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

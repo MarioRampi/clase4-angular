@@ -1,4 +1,6 @@
 <div>
   <h1>Detalle de {{code}}</h1>
-  <app-boton label="Ir" (apretar)="onClick()" clase="primary"></app-boton>
+  <h2>{{email}}</h2>
+  <app-boton label="Listar" (apretar)="listar()" clase="primary" *ngIf="isAdmin"></app-boton>
+  <app-boton label="Ir" (apretar)="onClick()" clase="primary" *ngIf="isAdmin"></app-boton>
 </div>

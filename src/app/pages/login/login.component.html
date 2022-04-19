@@ -1,0 +1,27 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <div>
+      <label for="email">Username</label>
+      <br>
+      <input type="email" name="email" formControlName="email">
+      <div *ngIf="!form.controls.email.valid">
+        El valor debe ser un email.
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <br>
+      <input type="password" name="password" formControlName="password">
+    </div>
+
+    <hr>
+      <div>
+        ESTADO: {{form.status}}
+      </div>
+    <hr>
+    <div>
+      <button type="submit" [disabled]="!form.valid">Login</button>
+    </div>
+  </form>
+</div>
