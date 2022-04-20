@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,13 +15,16 @@ import { ErrorComponent } from './pages/error/error.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PaisService } from './service/pais.service';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaisItemComponent } from './components/pais-item/pais-item.component';
 
 import { MatCardModule } from '@angular/material/card';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthService } from './service/auth.service';
+import { HeadersInterceptor } from './service/headers.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { MatCardModule } from '@angular/material/card';
     InfoMotoComponent,
     DetalleComponent,
     ErrorComponent,
-    PaisItemComponent
+    PaisItemComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +55,17 @@ import { MatCardModule } from '@angular/material/card';
     MatProgressSpinnerModule,
 
     MatCardModule,
+
+    ReactiveFormsModule,
   ],
   providers: [
     PaisService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeadersInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

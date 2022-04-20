@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Moto } from 'src/app/classes/moto';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-inicio',
@@ -8,7 +9,9 @@ import { Moto } from 'src/app/classes/moto';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private auth: AuthService,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -28,5 +31,17 @@ export class InicioComponent implements OnInit {
   onClick(event: any) {
     console.log('onClick', event);
     // console.log(this.nombre);
+  }
+
+  listar() {
+    this.auth.listar()
+      .subscribe({
+        next: data => {
+          console.log(data);
+        },
+        error: e => {
+          console.log(e);
+        }
+      })
   }
 }
