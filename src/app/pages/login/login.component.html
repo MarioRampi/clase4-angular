@@ -1,0 +1,26 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <div>
+      <label for="email">Email:</label>
+      <br>
+      <input type="email" name="email" id="email"  formControlName="email">
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <br>
+      <input type="password" name="password" id="password" formControlName="password">
+    </div>
+
+    <hr>
+    <p>
+      STATUS: {{ form.status }}
+    </p>
+
+    <hr>
+    <div>
+      <button [disabled]="form.invalid" >Login</button>
+    </div>
+
+  </form>
+</div>

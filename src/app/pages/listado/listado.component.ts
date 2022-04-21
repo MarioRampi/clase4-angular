@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pais } from 'src/app/class/pais';
+import { AuthService } from 'src/app/service/auth.service';
 // import { HttpClient } from '@angular/common/http';
 import { PaisService } from 'src/app/service/pais.service';
 
@@ -11,6 +12,7 @@ import { PaisService } from 'src/app/service/pais.service';
 })
 export class ListadoComponent implements OnInit {
   // api = 'https://restcountries.com/v3.1/all';
+  isLogged = false;
 
   paises: Pais[] = [];
 
@@ -21,11 +23,14 @@ export class ListadoComponent implements OnInit {
   constructor(
     private router: Router,
     // private http: HttpClient,
-    private paisService: PaisService
+    private paisService: PaisService,
+    private auth: AuthService,
   ) { }
 
   ngOnInit(): void {
     this.traerPaises();
+
+    this.isLogged = this.auth.isLogged();
   }
 
   traerPaises() {

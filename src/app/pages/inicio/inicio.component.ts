@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-inicio',
@@ -38,6 +39,22 @@ export class InicioComponent implements OnInit {
     'success', 'info', 'danger',
   ];
 
+  constructor(private auth: AuthService) {
+
+  }
+
+  listar() {
+    this.auth.listar().subscribe({
+      next: data => {
+        console.log(data);
+      },
+      error: error => {
+        console.log(error);
+      }
+    }
+    );
+  }
+
   public onClick(event: any) {
     console.log('onClick:', event);
   }
@@ -45,7 +62,6 @@ export class InicioComponent implements OnInit {
   onMostrar() {
     this.mostrar = !this.mostrar;
   }
-  constructor() { }
 
   ngOnInit(): void {
   }

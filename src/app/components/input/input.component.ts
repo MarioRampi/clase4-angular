@@ -12,4 +12,7 @@ export class InputComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  enviar() {
+    
+  }
 }

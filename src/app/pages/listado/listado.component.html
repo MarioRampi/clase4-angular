@@ -1,5 +1,5 @@
 <div>
-  <button mat-raised-button color="accent" (click)="traerPaises()" >♻</button>
+  <button mat-raised-button color="accent" (click)="traerPaises()" *ngIf="isLogged" >♻</button>
 
   <p *ngIf="error">Ocurrio un error"❗ </p>
 

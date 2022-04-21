@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -19,6 +19,8 @@ import { DetalleComponent } from './pages/detalle/detalle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaisService } from './service/pais.service';
 import { PaisItemComponent } from './components/pais-item/pais-item.component';
+import { LoginComponent } from './pages/login/login.component';
+import { HeadersInterceptor } from './service/headers.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { PaisItemComponent } from './components/pais-item/pais-item.component';
     LabelComponent,
     ErrorComponent,
     DetalleComponent,
-    PaisItemComponent
+    PaisItemComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +46,16 @@ import { PaisItemComponent } from './components/pais-item/pais-item.component';
     HttpClientModule,
     MatProgressSpinnerModule,
     MatCardModule,
+
+    ReactiveFormsModule,
   ],
   providers: [
     PaisService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeadersInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
